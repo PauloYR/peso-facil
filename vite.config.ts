@@ -6,5 +6,4 @@ export default defineConfig({
     tailwindcss(),
     ghPages()
   ],
-  base: 'vite-plugin-gh-pagesPauloYR/peso-facil',
 })
