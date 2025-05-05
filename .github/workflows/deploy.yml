@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
+      - name: Checkout do código
         uses: actions/checkout@v3
 
       - name: Instalar dependências
@@ -22,13 +22,8 @@ jobs:
       - name: Build do projeto
         run: npm run build
 
-      - name: Mover arquivos para /root
-        run: |
-          mkdir -p /root
-          cp -r dist/* /root/
-
-      - name: Deploy para GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy para o GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: /root
+          publish_dir: ./dist
